@@ -1,0 +1,27 @@
+<body style="min-height:100vh"id="back">
+  <div id="head">
+    <div>
+<div *ngIf="getResults">	
+  <div *ngFor="let movie of getResults">
+    <div class="row">
+    <div class="col-lg-4">
+    <img class="thumbnail" [src]="'http://image.tmdb.org/t/p/w500' + movie.poster_path"/>
+  	</div>
+    <div>
+  <div class="col-lg-8">
+    <h1><label>Title:</label>{{movie.title}}
+	<button class="glyphicon glyphicon-remove pull-right" (click)="deletefav(movie.id)">
+	</button></h1>
+  
+   <h3><label>Release Date:</label>{{movie.release_date}}</h3>
+   <h3><label>Rating:</label>{{movie.vote_average}}<input type="text" name="rating"[(ngModel)]="movie.vote_average"></h3>
+   <h3><label>Overview:</label>{{movie.overview}}</h3>
+   <h3><label>Genre:</label>{{generemethod(movie.genre_ids)}}</h3>
+   <button (click)="updateRating(movie.id,movie.title,movie.poster_path,movie.vote_average,movie.overview,movie.release_date,movie.genre_ids)">save</button>
+  </div>
+    </div>
+    </div>
+  </div>
+</div>
+  </div>
+</body>

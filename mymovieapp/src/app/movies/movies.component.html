@@ -1,0 +1,44 @@
+<body style="min-height:100vh"id="back">
+	
+<div class="container">
+	<div class="jumbotron">
+
+    <h1>Browse For Movies</h1>
+    <p>Search for a movie using the form below</p>
+    <form (submit)="search()">
+      <input type="text" class="form-control" [(ngModel)]="query" name="qaa">
+      <br>
+      <button class="btn btn-primary btn-lg">Search</button>
+    </form>
+  </div>
+
+<div id="head"
+            infinite-scroll
+            debounce
+            [infiniteScrollDistance]="scrolldistance"
+            [infiniteScrollThrottle]="throttle"
+            (scrolled)="onScroll(query)">
+		
+<div *ngIf="searchResults">	
+  <div *ngFor="let movie of searchResults">
+    <div class="row">
+    <div class="col-lg-4">
+    <img class="thumbnail" [src]="'http://image.tmdb.org/t/p/w500' + movie.poster_path"/>
+  	</div>
+  <div class="col-lg-8">
+    <h1><label>Title:</label>{{movie.title}}
+	<button class="glyphicon glyphicon-star pull-right" (click)="this.favouritecomponent.pushfavourite(movie.id,movie.title,movie.poster_path,movie.vote_average,movie.overview,movie.release_date,movie.genre_ids)">
+	</button></h1>
+  <h3><label>id:</label>{{movie.id}}</h3>
+   <h3><label>Release Date:</label>{{movie.release_date}}</h3>
+   <h3><label>Rating:</label>{{movie.vote_average}}</h3>
+   <h3><label>Overview:</label>{{movie.overview}}</h3>
+   <h3><label>Genre:</label>{{generemethod(movie.genre_ids)}}</h3>
+  </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</body>
+<!--<app-favourite></app-favourite>-->

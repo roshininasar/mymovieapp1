@@ -1,0 +1,53 @@
+body{
+    margin-top:4%;
+}
+img
+{
+     width:100%;
+     height: 10%;
+}
+.col-md-8
+{
+    text-align: justify;
+    font-family: 'Josefin Sans';
+}
+.col-md-4{
+    margin-left: 20px;
+    margin-right: 40px;
+
+    
+}
+
+.text-align{
+     font-family: 'Josefin Sans';
+     font-size: 30px;
+}
+.pull-right{
+    text-decoration:none;
+    color:black; 
+}
+
+.search-results {
+      height: 100%;
+}
+
+ .pull-right{
+     background-color:transparent;
+     border:black;
+ }
+
+.btn{
+    height: 25px;
+    
+}
+
+#head{
+    background-image: url("https://s-media-cache-ak0.pinimg.com/originals/f6/ed/53/f6ed5366b961c8e960a4ac5b6ffdbb41.jpg");
+    background-repeat: no-repeat;
+background-size: 100% ;
+background-attachment: fixed;
+}
+#back{
+    background-color: black;
+}
+
